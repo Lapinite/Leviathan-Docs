@@ -16,13 +16,11 @@
 
 ## Documentation map
 
-<table width="100%">
-<tr>
-<td width="33%" valign="top"><strong>Player Platform</strong><br><sub>Launcher · Client · Minecraft installation · instances · profiles · Java/runtime management · Cast</sub></td>
-<td width="33%" valign="top"><strong>Developer Platform</strong><br><sub>APIs · SDK · integrations · webhooks · examples · compatibility</sub></td>
-<td width="33%" valign="top"><strong>Operations & Safety</strong><br><sub>Security · privacy · troubleshooting · releases · support · status terminology</sub></td>
-</tr>
-</table>
+<p align="center">
+  <img width="100%" src="assets/ecosystem-map.svg" alt="Animated Leviathan public documentation ecosystem map">
+</p>
+
+The documentation model follows four major boundaries: player software, external identity/platform services, developer interfaces, and security/operations. This keeps public documentation useful without publishing private implementation detail.
 
 ## Start here
 
@@ -41,6 +39,16 @@ The [public guide](GUIDE.md) is the main topic-by-topic entry point. It currentl
 - [Security and privacy](GUIDE.md#security-and-privacy)
 - [Troubleshooting](GUIDE.md#troubleshooting)
 - [Releases](GUIDE.md#releases)
+
+## External service boundaries
+
+Leviathan may interoperate with Microsoft account services, Xbox Live, XSTS, Minecraft Services, Mojang/Minecraft platform services, Discord and other intentionally supported third-party systems. These services remain external trust and data boundaries with their own terms, availability requirements and security controls.
+
+Public docs may explain the high-level flow from Microsoft authentication to Xbox/XSTS, Minecraft ownership/profile verification, Leviathan account mapping, launcher/client state, Cast/device state and supported public integrations. Raw credentials, confidential tokens, private service topology, database schemas and internal endpoints remain outside public documentation.
+
+## Data platform direction
+
+At a high level, Leviathan data architecture is expected to separate relational product/account state, ephemeral cache/session state, object storage/backups and asynchronous event processing. Public documentation may describe responsibilities such as accounts, linked Minecraft identity, launcher/client state, Cast sessions, licensing, telemetry, analytics, Nimbus/security metadata and audit history, but not private schemas or infrastructure addresses.
 
 ## Scope
 
