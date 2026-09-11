@@ -22,6 +22,18 @@
 
 The documentation model follows four major boundaries: player software, external identity/platform services, developer interfaces, and security/operations. This keeps public documentation useful without publishing private implementation detail.
 
+## Experience and commerce model
+
+<p align="center">
+  <img width="100%" src="assets/experience-commerce.svg" alt="Animated Leviathan website, mobile, commerce, cosmetics and LeviCoins architecture">
+</p>
+
+The planned public-facing experience spans the website, mobile app, launcher and client. Account and store state should remain consistent across those surfaces through Leviathan platform APIs and account mapping.
+
+Commerce is intentionally separated from payment credentials. A purchase flow may move through catalog and checkout, an external payment provider, verified order state and then Leviathan entitlement state. Payment-card credentials should remain with the payment provider rather than being stored by Leviathan.
+
+Cosmetics ownership, equipped state and LeviCoins are expected to be separate platform responsibilities. LeviCoins should use a ledger-style model for grants, spends and adjustments rather than a mutable balance with no history. Referral, creator and campaign rewards should attach to verified platform events and include anti-abuse controls.
+
 ## Start here
 
 The [public guide](GUIDE.md) is the main topic-by-topic entry point. It currently covers:
@@ -42,13 +54,13 @@ The [public guide](GUIDE.md) is the main topic-by-topic entry point. It currentl
 
 ## External service boundaries
 
-Leviathan may interoperate with Microsoft account services, Xbox Live, XSTS, Minecraft Services, Mojang/Minecraft platform services, Discord and other intentionally supported third-party systems. These services remain external trust and data boundaries with their own terms, availability requirements and security controls.
+Leviathan may interoperate with Microsoft account services, Xbox Live, XSTS, Minecraft Services, Mojang/Minecraft platform services, Discord, payment providers and other intentionally supported third-party systems. These services remain external trust and data boundaries with their own terms, availability requirements and security controls.
 
-Public docs may explain the high-level flow from Microsoft authentication to Xbox/XSTS, Minecraft ownership/profile verification, Leviathan account mapping, launcher/client state, Cast/device state and supported public integrations. Raw credentials, confidential tokens, private service topology, database schemas and internal endpoints remain outside public documentation.
+Public docs may explain the high-level flow from Microsoft authentication to Xbox/XSTS, Minecraft ownership/profile verification, Leviathan account mapping, launcher/client state, Cast/device state, supported public integrations and verified commerce events. Raw credentials, confidential tokens, private service topology, database schemas and internal endpoints remain outside public documentation.
 
 ## Data platform direction
 
-At a high level, Leviathan data architecture is expected to separate relational product/account state, ephemeral cache/session state, object storage/backups and asynchronous event processing. Public documentation may describe responsibilities such as accounts, linked Minecraft identity, launcher/client state, Cast sessions, licensing, telemetry, analytics, Nimbus/security metadata and audit history, but not private schemas or infrastructure addresses.
+At a high level, Leviathan data architecture is expected to separate relational product/account state, ephemeral cache/session state, object storage/backups and asynchronous event processing. Public documentation may describe responsibilities such as accounts, linked Minecraft identity, launcher/client state, website/mobile state, Cast sessions, licensing, orders, entitlements, cosmetics ownership, LeviCoins ledger events, referrals, telemetry, analytics, Nimbus/security metadata and audit history, but not private schemas or infrastructure addresses.
 
 ## Scope
 
@@ -65,7 +77,7 @@ It should always distinguish between:
 
 ## Documentation safety
 
-Public documentation must not contain credentials, tokens, private keys, signing material, recovery material, personal information, private endpoints, database credentials, internal hostnames, sensitive infrastructure topology, or machine-specific local development paths.
+Public documentation must not contain credentials, tokens, private keys, signing material, recovery material, personal information, private endpoints, database credentials, payment-provider secrets, internal hostnames, sensitive infrastructure topology, or machine-specific local development paths.
 
 High-level product architecture may be documented when it is intentionally sanitized and useful to users or developers. Sensitive implementation details remain private.
 
@@ -89,7 +101,7 @@ Leviathan is under active development. Documentation evolves as interfaces, beha
 
 Leviathan is an independent third-party project. It is not affiliated with, sponsored by, endorsed by, operated by, or officially associated with Microsoft, Mojang Studios, Xbox, or Minecraft.
 
-Third-party trademarks, services, libraries, and assets remain subject to their respective owners and licenses.
+Third-party trademarks, services, libraries, payment providers and assets remain subject to their respective owners and licenses.
 
 ## Community
 
